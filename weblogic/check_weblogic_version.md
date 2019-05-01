@@ -1,13 +1,14 @@
 # How to find Oracle WebLogic Server Version?
 Today one of my customer asked me the way to find out weblogic server version which they have installed so thought to share details with you as well.
 
-*There are different ways to determine Oracle Weblogic Service Version. Use one of the following method to find weblogic server version.
+ *There are different ways to determine Oracle Weblogic Service Version. Use one of the following method to find weblogic server version.
 
 ## 1. We can determine weblogic server version using registry.xml file:
 Location in WLS 12.2.1.3:
 $ORACLE_HOME/inventory/registry.xml
 
 <distribution status="installed" name="WebLogic Server" version="12.2.1.3.0">
+
 ```
 e.g.
 /u02/oracle12213/oracle_home/middleware/inventory/registry.xml
@@ -24,6 +25,7 @@ cie/gdr/nfo" xmlns="http://xmlns.oracle.com/cie/gdr/rgy">
             <feature status="installed" name="cieCfg_wls_shared_external" version="12.2.1.3.0">
                <sessions>
 ```
+
 ## 2. We can user weblogic.jar file (weblogic.version class) to find weblogic server version:
 Go to $WLS_HOME/server/lib
 e.g. For WLS 12.2.1.3
@@ -31,6 +33,7 @@ e.g. For WLS 12.2.1.3
 
 Use below command to find weblogic and it's component version,
 java -cp weblogic.jar weblogic.version -verbose
+
 ```
 e.g.
 [oracle@demomachine lib]$ java -cp weblogic.jar weblogic.version -verbose
@@ -135,25 +138,30 @@ XMLService                      XML 1.1
 ## 3. We can find weblogic server version from check the AdminServer.log file:
 Go to $DOMAIN_HOME/servers/AdminServer/logs
 Check AdminServer.log file for weblogic server version
+
 ```
 e.g.
 ####<Oct 24, 2017 3:39:16,238 PM IST> <Info> <WebLogicServer> <demomachine> <> <Thread-10> <> <> <> <1508839756238> <[severity-value: 64] [partition-id: 0] [partition-name: DOMAIN] > <BEA-000214> <WebLogic Server "AdminServer" version: WebLogic Server 12.2.1.3.0 Thu Aug 17 13:39:49 PDT 2017 1882952 Copyright (c) 1995,2017, Oracle and/or its affiliates. All rights reserved.>
 ```
+
 ## 4. We can use WLST to check weblogic server version:
 Go to $ORACLE_HOME/oracle_common/bin
 Invoke wlst.sh
 Use command print version
+
 ```
 e.g.
 wls:/offline> print version
 WebLogic Server 12.2.1.3.0
 wls:/offline>
 ```
+
 ## 5. We can use admin console to check weblogic server version:
 Login to WebLogic Admin Console and navigate to Servers => AdminServer => Monitoring tab
 This page will have weblogic version details.
 OR
 When you open Admin console, version will be displayed at the bottom of the welcome page.
+
 ```
 e.g.
 WebLogic Server Version: 12.2.1.3.0
