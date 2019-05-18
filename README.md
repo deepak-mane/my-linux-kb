@@ -27,3 +27,7 @@ java weblogic.version
 ```
 find . -type f | perl -ne 'print $1 if m/\.([^.\/]+)$/' | sort -u
 ```
+OR
+```
+find . -type f | awk -F. '!a[$NF]++{print $NF}'
+```
