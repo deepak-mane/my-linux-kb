@@ -88,3 +88,33 @@ In server's /etc/ssh/sshd_config:
 #PubkeyAuthentication yes
 #AuthorizedKeysFile .ssh/authorized_keys
 ```
+### How to enable Remote Desktop connections on Kali
+
+The following steps assumes that you have installed Kali Linux from the latest ISO and did the update procedure:
+```
+apt-get update && apt-get upgrade
+apt-get dist-upgrade
+```
+In order to install the RDP server you run the following command from a terminal window:
+```
+apt-get install xrdp
+```
+After xrdp is installed you can start the server with the following command:
+```
+service xrdp start
+Service xrdp-sesman start 
+```
+If want it to auto start after reboot you need to run this command also:
+```
+update-rc.d xrdp enable     (It will not start xrdp-sesman automatic)
+```
+Now you should be able to RDP directly into your Kali Linux
+
+The only way I found that fixes this is to uninstall the Gnome-desktop and use another window manager (I use LXDE):
+```
+apt-get remove gnome-core
+apt-get install lxde-core lxde kali-defaults kali-root-login desktop-base
+update-alternatives –config x-session-manager
+Choose /usr/bin/startlxde
+After this you need to reboot and the RDP should work “perfectly”
+```
