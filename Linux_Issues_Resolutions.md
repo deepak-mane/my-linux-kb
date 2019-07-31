@@ -1,6 +1,6 @@
 # Linux Issues Resolutions
 
-  1. cannot open display localhost:10.0 
+  1. <b>Cannot open display localhost:10.0</b> 
 ```
 Update /etc/ssh/sshd_config on you Local Host with below
 X11Forwarding yes
