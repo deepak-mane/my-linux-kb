@@ -4,7 +4,7 @@
 ```
 Troubleshoot:
 First: Find remote host variable set DISPLAY value
-ssh -X user@remotehostname.domain env
+ssh -X user@remotehostname.domain env|grep DISPLAY
 
 Second: Update /etc/ssh/sshd_config on you Local Host with below
 X11Forwarding yes
