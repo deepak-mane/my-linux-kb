@@ -79,7 +79,7 @@ su - adminuser -c 'xauth list' |\
 ### X client forwarded over SSH “cannot open display: localhost:11.0”
 <b>Solution:</b>
 This is the very basic way of how it should work:
-
+```
 On the client / local machine (Xorg installed on client) try this:
 
 $ xhost +
@@ -91,14 +91,14 @@ or
 
 $ ssh -AX user@host xterm
 With non standard clients xhost may be needed.
-
+```
 If it doesn't resolve try below
 
 
 Follow these steps to create a $HOME/.Xauthority file.
 
 Log in as user and confirm that you are in the user's home directory.
-
+```
 # Rename the existing .Xauthority file by running the following command
 mv .Xauthority old.Xauthority 
 
@@ -113,4 +113,5 @@ xauth add ${HOST}:0 . $(xxd -l 16 -p /dev/urandom)
 
 # To view a listing of the .Xauthority file, enter the following 
 xauth list 
+```
 After that no more problems with .Xautority file since then.
