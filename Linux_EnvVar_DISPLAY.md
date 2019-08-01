@@ -73,3 +73,22 @@ su - adminuser -c 'xauth list' |\
  cut -d '.' -f 1 |\
  sed -e s/^/:/` |\
  xargs -n 3 xauth add
+
+
+
+### X client forwarded over SSH “cannot open display: localhost:11.0”
+This is the very basic way of how it should work:
+
+On the client / local machine (Xorg installed on client) try this:
+
+$ xhost +
+access control disabled, clients can connect from any host
+Later try:
+
+$ ssh -AY user@host xterm
+or
+
+$ ssh -AX user@host xterm
+With non standard clients xhost may be needed.
+
+check 9.3.5.6. Nonstandard X clients
