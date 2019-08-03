@@ -5,6 +5,13 @@ My Linux Knowledgebase
 ## Important Articles
 
 ## Important Commands
+- To add user to sudoer list and without password
+```
+#Add Below line 
+root@cplusdevenv:~# vi /etc/sudoers.d
+sysadmin      ALL=(ALL) NOPASSWD:ALL
+```
+
 
 ### Remotely execute commands
 ```
