@@ -25,7 +25,8 @@ This should popup manual clock's dial on you localhost screen
 
  2.<b>ON UBUNTU : CMake not found, yet it is installed</b>
  
-Download  the script from [CMake's Download Page](https://cmake.org/download/). The documentation how to use it is admittedly a little sparse.
+Download  the script from [CMake's Download Page](https://cmake.org/download/). 
+The documentation how to use it is admittedly a little sparse.
 
 In short, call (installation path for CMake here is /usr/local):
 ```
@@ -47,7 +48,8 @@ Options: [defaults in brackets after descriptions]
   --include-subdir  include the cmake-3.11.3-Linux-x86_64 subdirectory
   --exclude-subdir  exclude the cmake-3.11.3-Linux-x86_64 subdirectory
   --skip-license    accept license
-The one you are searching for is --prefix=dir. Otherwise it will just use the current directory to extract the installation files.
+The one you are searching for is --prefix=dir. Otherwise it will just use the current 
+directory to extract the installation files.
 
 Test Output on Ubuntu
 
@@ -66,6 +68,10 @@ cmake version 3.11.3
 
 CMake suite maintained and supported by Kitware (kitware.com/cmake).
 Reference / Alternative
-
+```
 Ask Ubuntu: How do I install the latest version of cmake from the command line?
+```
+sudo -E add-apt-repository -y ppa:george-edison55/cmake-3.x
+sudo -E apt-get update
+sudo apt-get install cmake
 ```
