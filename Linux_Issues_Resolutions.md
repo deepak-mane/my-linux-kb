@@ -75,3 +75,11 @@ sudo -E add-apt-repository -y ppa:george-edison55/cmake-3.x
 sudo -E apt-get update
 sudo apt-get install cmake
 ```
+ 3.<b>ON UBUNTU : Launch Failed. Binary not found. CDT on Eclipse Neon</b>
+Go to the Run->Run Configuration-> now
+
+Under C/C++ Application you will see the name of your executable + Debug (if not, click over C/C++ Application a couple of times). Select the name (in this case projectTitle+Debug).
+
+Under this in main Tab -> C/C++ application -> Search your project -> in binaries select your binary titled by your project....
+
+
