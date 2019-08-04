@@ -23,7 +23,7 @@ xclock
 This should popup manual clock's dial on you localhost screen
 ```
 
- 2.<>ON UBUNTU : CMake not found, yet it is installed<>
+ 2.<b>ON UBUNTU : CMake not found, yet it is installed</b>
  
 Download  the script from [CMake's Download Page](https://cmake.org/download/). The documentation how to use it is admittedly a little sparse.
 
