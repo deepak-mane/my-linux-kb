@@ -150,3 +150,63 @@ chsh command is used to change the login shell for a user.
 ```
 
 All done.! you are all set. You could logout and login to your new account.
+
+
+### KaliLinux 2017.1: Install Eclipse CDT for C/C++ development
+This article will describe installing Eclipse CDT.
+
+Table of Contents
+1. Install Eclipse
+2. Run Eclipse
+
+
+1 Install Eclipse
+Eclipse CDT in KaliLinux repository does not load CDT plugins. This article will install Eclipse CDT from Eclipse site while installing Eclipse CDT from KaliLinux repository for installing require packages.
+
+Install Eclipse CDT from KaliLinux repository.
+```
+$ sudo apt install -y eclipse-cdt-*
+```
+Download Eclipse installer.
+```
+$ URL=https://www.eclipse.org/downloads/download.php
+$ ECLIPSE=/oomph/epp/oxygen/R/eclipse-inst-linux64.tar.gz
+$ MIRROR=1
+$ wget -q -O eclipse-inst-linux64.tar.gz "${URL}?file=${ECLIPSE}&mirror_id=${MIRROR}"
+$ tar zxf eclipse-inst-linux64.tar.gz
+```
+Run Eclipse installer.
+```
+$ ./eclipse-installer/eclipse-inst
+Select "Eclipse IDE for C/C++ Developers".
+```
+0001_SelectType.png
+
+Decide install directory and press "INSTALL".
+
+0002_InstallationFolder.png
+
+Accept license with pressing "Accept".
+
+0003_AcceptLicenses.png
+
+Accept download URL certificates with pressing "Select All" and "Accept selected".
+
+0004_TrustCertificates.png
+
+Eclipse installation is completed. Pressing "LAUNCH" runs Eclipse.
+
+0005_InstallationCompleted.png
+
+You can remove Eclipse installer.
+```
+$ rm -rf eclipse-inst-linux64.tar.gz eclipse-installer
+```
+
+2 Run Eclipse
+Run the following command.
+```
+$ ./eclipse/cpp-oxygen/eclipse/eclipse
+```
+
+0006_Eclipse.png
