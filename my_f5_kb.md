@@ -78,7 +78,7 @@ Click on Browse
 Locate the SSL certificate file then click OK
 Click on Import
 
-   ![alt text](./images/ImportSSLcert_3.png) 
+   ![alt text](./images/ImportSSLcert3.png) 
  
 ### Step 3. Download and Import the Intermediate CA certificate 
 
@@ -91,12 +91,12 @@ Save the file as Intermediate.pem
 On the left panel, navigate to System > File Management > SSL Certificate List
 Click on Import (button to the right)
 
-   ![alt text](./images/ImportSSLcert_4.png) 
+   ![alt text](./images/ImportSSLcert4.png) 
  
 Select Certificate on the dropdown. Choose Create New and give a name for the certificate in the box below
 Choose Upload File and click Browse
 
-   ![alt text](./images/ImportSSLcert_5.png) 
+   ![alt text](./images/ImportSSLcert5.png) 
  
 Locate the Intermediate.pem file then click OK
 Click on Import
