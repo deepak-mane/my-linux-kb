@@ -18,44 +18,41 @@ To create a new Certificate Signing Request, perform the steps below:
 1. From the Issuer drop down list, select Certificate Authority.
 1. Fill the form to generate the CSR. ...
 1. Click Finished.
-
-![alt text](./images/generate_CSR.png)
- 
-Name: Give a name for your SSL Certificate which will be the name displayed within Big IP. The name should not have any spaces.
-Issuer: Certificate Authority Symantec.
-Common name: FQDN (fully-qualified domain name) of the server (e.g. www.symantec.com, mail.symantec.com, or for wildcard certificate *.symantec.com).
-Division: This is also referred as the Organizational Unit.  You may use this field as a department name for the certificate or a naming convention of your choosing.
-Organization: Use the legally registered organization or business name that your company operates as.
-Locality, State or Province, Country: City, state, and country where the organization is located. Do not abbreviate the state or province.
-E-mail Address: Your email.
-Subject Alternative Name: Enter your Subject Alternative Name, also known as SANs, here if any. If you do not have any that is needed to be on the same certificate, you may leave this field blank.
-Challenge Password, Confirm Password: Do not enter a challenge password. Leave the challenge password blank.
-The key size must be 2048 bits for all SSL Certificates.
- 
-Click Finished
-Verify your CSR
-Copy the CSR (including the BEGIN and END tags) as seen below:
-
+   - Name: Give a name for your SSL Certificate which will be the name displayed within Big IP. The name should not have any spaces.
+   - Issuer: Certificate Authority Symantec.
+   - Common name: FQDN (fully-qualified domain name) of the server (e.g. www.symantec.com, mail.symantec.com, or for wildcard certificate *.symantec.com).
+   - Division: This is also referred as the Organizational Unit.  You may use this field as a department name for the certificate or a naming convention of your choosing.
+   - Organization: Use the legally registered organization or business name that your company operates as.
+   - Locality, State or Province, Country: City, state, and country where the organization is located. Do not abbreviate the state or province.
+   - E-mail Address: Your email.
+   - Subject Alternative Name: Enter your Subject Alternative Name, also known as SANs, here if any. If you do not have any that is needed to be on the same certificate, you may leave this field blank.
+   - Challenge Password, Confirm Password: Do not enter a challenge password. Leave the challenge password blank.
+   - The key size must be 2048 bits for all SSL Certificates.
+   ![alt text](./images/generate_CSR.png) 
+1. Click Finished
+1. Verify your CSR
+1. Copy the CSR (including the BEGIN and END tags) as seen below:
+```
 -----BEGIN CERTIFICATE REQUEST-----
               
                 [encoded data]
 
 -----END CERTIFICATE REQUEST-----
- 
+```
 Proceed with the Enrollment from the Symantec web site and paste the CSR in the required field.
  
 Contact Information
-
+```
          During the verification process, Symantec may need to contact your organization. Be sure to provide an email address, 
          phone number and fax number that will be checked and responded to quickly. These fields are not part of the certificate.
-         
+ ```        
          
 # Installation Instructions for F5 BIG-IP version 11.x
 Solution
 
 This document provides installation instructions for F5 BIG IP 11.x. If you are not able to perform the steps on your server, DigiCert recommends to contact the server vendor or the organization, which supports F5.
 
-Step 1. Obtain the SSL Certificate
+### Step 1. Obtain the SSL Certificate
 
 Log into the Trust Center account. Enter in your Username and Password.
 Click Sign In
@@ -66,14 +63,14 @@ Select the Server platform and Server version from the drop down menus that the 
 NOTE: If you are not sure of the server platform, choose "Other". This will give you the x.509 version of the certificate.
 Click the Download button
 A prompt window will appear to save a .zip file which will contain all neccessary certificates and additional documents and/or information for installation
- 
-Step 2. Install the SSL Certificate
+   ![alt text](./images/ImportSSLcert_1.png) 
+### Step 2. Install the SSL Certificate
 
 On the left panel, navigate to System >  File Management
 Choose SSL Certificate List
 From the list, click on the pending request (the label from when you generated the CSR)
 Click on Import
-
+   ![alt text](./images/ImportSSLcert_2.png) 
 
  
 Select Upload file
@@ -81,9 +78,9 @@ Click on Browse
 Locate the SSL certificate file then click OK
 Click on Import
 
-
+   ![alt text](./images/ImportSSLcert_3.png) 
  
-Step 3. Download and Import the Intermediate CA certificate 
+### Step 3. Download and Import the Intermediate CA certificate 
 
 Download the Intermediate CA certificate from this link: INFO657
 Select the appropriate Intermediate CA certificate for your SSL Certificate type
@@ -94,17 +91,17 @@ Save the file as Intermediate.pem
 On the left panel, navigate to System > File Management > SSL Certificate List
 Click on Import (button to the right)
 
-
+   ![alt text](./images/ImportSSLcert_4.png) 
  
 Select Certificate on the dropdown. Choose Create New and give a name for the certificate in the box below
 Choose Upload File and click Browse
 
-
+   ![alt text](./images/ImportSSLcert_5.png) 
  
 Locate the Intermediate.pem file then click OK
 Click on Import
 
-Step 4. Updating the SSL profile
+### Step 4. Updating the SSL profile
 
 On the left panel, navigate to Local Traffic > Profiles > SSL > Client
 From the list, select the SSL profile for your website 
@@ -119,7 +116,5 @@ Verify your installation with the DigiCert SSL Tools.
  
 
 F5 Support
- 
-
-         For additional information, refer to F5's KB solution: SOL13302 
+- For additional information, refer to F5's KB solution: SOL13302 
  
