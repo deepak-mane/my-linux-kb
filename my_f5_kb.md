@@ -19,7 +19,7 @@ To create a new Certificate Signing Request, perform the steps below:
 1. Fill the form to generate the CSR. ...
 1. Click Finished.
 
-![alt text](./images/form to generate the CSR.png)
+![alt text](./images/"form to generate the CSR.png")
  
 Name: Give a name for your SSL Certificate which will be the name displayed within Big IP. The name should not have any spaces.
 Issuer: Certificate Authority Symantec.
