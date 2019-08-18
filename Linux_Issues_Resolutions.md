@@ -104,7 +104,7 @@ Ask Ubuntu: How do I install the latest version of cmake from the command line?
 ```
 sudo -E add-apt-repository -y ppa:george-edison55/cmake-3.x
 sudo -E apt-get update
-sudo apt-get install cmake
+sudo apt-get -y install cmake
 ```
  3.<b>ON UBUNTU : Launch Failed. Binary not found. CDT on Eclipse Neon</b>
 Go to the Run->Run Configuration-> now
