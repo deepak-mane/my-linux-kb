@@ -114,3 +114,25 @@ Under C/C++ Application you will see the name of your executable + Debug (if not
 Under this in main Tab -> C/C++ application -> Search your project -> in binaries select your binary titled by your project....
 
 
+ 4.<b>ON UBUNTU : How do I create the .Xauthority file?</b>
+
+Follow these steps to create a $HOME/.Xauthority file.
+
+Log in as user and confirm that you are in the user's home directory.
+```
+# Rename the existing .Xauthority file by running the following command
+mv .Xauthority old.Xauthority 
+
+# xauth with complain unless ~/.Xauthority exists
+touch ~/.Xauthority
+
+# only this one key is needed for X11 over SSH 
+xauth generate :0 . trusted 
+
+# generate our own key, xauth requires 128 bit hex encoding
+xauth add ${HOST}:0 . $(xxd -l 16 -p /dev/urandom)
+
+# To view a listing of the .Xauthority file, enter the following 
+xauth list 
+After that no more problems with .Xautority file since then.
+```
