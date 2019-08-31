@@ -40,3 +40,13 @@ find . -type f | awk -F. '!a[$NF]++{print $NF}'
 ```
 
 ### Issues - Resolutions
+
+
+### Powerful commnds:
+1. Linux: Recursive file searching with grep -r (like grep + find) [Reference](https://alvinalexander.com/linux)
+```
+find . -type f -exec grep -l 'mane' {} \;
+```
+This command can be read as, “Search all files in all subdirectories of the current directory for the string ‘mane’, and print the filenames that contain this pattern.” It’s an extremely powerful approach for recursively searching files in all subdirectories that match the pattern I specify.
+
+
