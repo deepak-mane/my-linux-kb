@@ -49,4 +49,30 @@ find . -type f -exec grep -l 'mane' {} \;
 ```
 This command can be read as, “Search all files in all subdirectories of the current directory for the string ‘mane’, and print the filenames that contain this pattern.” It’s an extremely powerful approach for recursively searching files in all subdirectories that match the pattern I specify.
 
+2. Linux find/copy FAQ: How can I use the find command to find many files and copy them all to a directory?
+```
+find . -type f -name "*.mp3" -exec cp {} /tmp/MusicFiles \;
+find . -type f -name "*.mp3" -exec cp -n {} /tmp/MusicFiles \;
+
+Features
+-1- If you don’t want to overwrite existing files, use the cp -n command, like this:
+-2- All of these files will end up in one folder.
+-3- If there are duplicate file names, some of the files will be lost.
+```
+
+3. Linux find/move FAQ: How can I use the find command to find many files and move them all to a directory?
+```
+find . -type f -exec mv {} . \;
+```
+4. Linux ‘find’ example: How to copy one file to many directories
+```
+find dir1 dir2 dir3 dir4 -type d -exec cp header.html {} \;
+
+Features
+-1- Find command, and I tell it to look in four sub-directories (dir1, dir2, dir3 and dir4).
+-2- find only directories (-type d).
+-3- issue the Linux copy (cp) command, and copy the file header.html to each directory that is found, 
+one directory at a time.
+```
+
 
