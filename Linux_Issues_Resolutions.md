@@ -24,7 +24,7 @@ This should popup manual clock's dial on you localhost screen
 ```
 
  2.<b>ON UBUNTU : CMake not found, yet it is installed</b>
- 
+ <b>Solution :</b>
 Download  the script from [CMake's Download Page](https://cmake.org/download/). 
 The documentation how to use it is admittedly a little sparse.
 
@@ -107,6 +107,7 @@ sudo -E apt-get update
 sudo apt-get -y install cmake
 ```
  3.<b>ON UBUNTU : Launch Failed. Binary not found. CDT on Eclipse Neon</b>
+ <b>Solution :</b>
 Go to the Run->Run Configuration-> now
 
 Under C/C++ Application you will see the name of your executable + Debug (if not, click over C/C++ Application a couple of times). Select the name (in this case projectTitle+Debug).
@@ -115,7 +116,7 @@ Under this in main Tab -> C/C++ application -> Search your project -> in binarie
 
 
  4.<b>ON UBUNTU : How do I create the .Xauthority file?</b>
-
+<b>Solution :</b>
 Follow these steps to create a $HOME/.Xauthority file.
 
 Log in as user and confirm that you are in the user's home directory.
@@ -135,4 +136,22 @@ xauth add ${HOST}:0 . $(xxd -l 16 -p /dev/urandom)
 # To view a listing of the .Xauthority file, enter the following 
 xauth list 
 After that no more problems with .Xautority file since then.
+```
+
+
+ 5. <b>ON UBUNTU : Gow to fix “ a start job is running for the raise network ” in ubuntu server 16.0 LTS</b>
+<b>Solution :</b>
+I seem to get the same issue and I also have a bridged network interface, probably from my VirtualBox setup, enp0s31f6:avahi.
+
+My system is ubuntu 16.04 LTS server variant, installed on a laptop, so primary use is as a workstation.
+
+The issue is there if the bridged interface is there, not if it's not present, say if VirtualBox has not been started inbetween reboots.
+
+The reason is as in the other answer that this interface lacks init info.
+
+My sollution was to reduce the timeout, and to do so without messing with the base installed networking.services systemd file. This will persist during updates in any package.
+```
+sudo mkdir -p /etc/systemd/system/networking.service.d/
+sudo bash -c 'echo -e "[Service]\nTimeoutStartSec=20sec" > /etc/systemd/system/networking.service.d/timeout.conf'
+sudo systemctl daemon-reload
 ```
