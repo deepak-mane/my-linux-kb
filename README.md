@@ -31,7 +31,7 @@ But I do not want to repeat the directory part after the touch command. Is that 
 mkdir B && touch B/myfile.txt
 Alternatively, create a function:
 
-mkfile() { mkdir -p -- "$1" && touch -- "$1"/"$2" }
+mkfile() { mkdir -p -- "$1" && touch -- "$1"/"$2"; }  ## Remember to use semi colon after $2 if creating on commandline
 Execute it with 2 arguments: path to create and filename. Saying:
 
 mkfile B/C/D myfile.txt
