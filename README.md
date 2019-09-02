@@ -7,11 +7,33 @@ My Linux Knowledgebase
 ## Important Commands
 - To add user to sudoer list and without password
 ```
+Suppose my current directory is A. I want to create a directory B and a file "myfile.txt" inside B.
+How to do that in one command from Terminal?
+Directory can be nested multiple times. Like I may want to create B/C/D and then "myfile.txt" inside that. 
+I do not also want to repeat the directory part.
+Following command will create directory at any level.
+mkdir -p B/C/D 
+and
+mkdir -p B/C/D && touch B/C/D/myfile.txt
+will create the directory and the file. 
+But I do not want to repeat the directory part after the touch command. Is that possible?
+```
+```
 #Add Below line 
 root@cplusdevenv:~# vi /etc/sudoers.d
 sysadmin      ALL=(ALL) NOPASSWD:ALL
 ```
 
+- One command to create a directory and file inside it linux command
+```
+mkdir B && touch B/myfile.txt
+Alternatively, create a function:
+
+mkfile() { mkdir -p -- "$1" && touch -- "$1"/"$2" }
+Execute it with 2 arguments: path to create and filename. Saying:
+
+mkfile B/C/D myfile.txt
+```
 
 ### Remotely execute commands
 ```
