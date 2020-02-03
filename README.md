@@ -103,5 +103,11 @@ Features
 -3- issue the Linux copy (cp) command, and copy the file header.html to each directory that is found, 
 one directory at a time.
 ```
+5. List all files that do not match pattern using "ls"
 
+```sh
+Ans 1) ls --ignore="*.pdf" --ignore="*.mp4"
+Ans 2) find ./ -maxdepth 1 ! -path "*txt"
+Ans 3) ls|grep -v ".txt"
+```
 
