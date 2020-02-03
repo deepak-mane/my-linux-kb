@@ -1,4 +1,4 @@
-# Lunx | .bash_profile - sample
+# Linux | .bash_profile - sample
 
 ```sh
 
